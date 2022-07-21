@@ -1,0 +1,645 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateDepartmentInput {
+  id: Float!
+  name: String!
+  permissions: Float!
+}
+
+input CreateEmployeeInput {
+  age: Float!
+  email: String!
+  name: String!
+}
+
+input CreateManyDepartmentsInput {
+  """Array of records to create"""
+  departments: [CreateDepartmentInput!]!
+}
+
+input CreateManyEmployeesInput {
+  """Array of records to create"""
+  employees: [CreateEmployeeInput!]!
+}
+
+input CreateManyRolesInput {
+  """Array of records to create"""
+  roles: [CreateRoleInput!]!
+}
+
+input CreateOneDepartmentInput {
+  """The record to create"""
+  department: CreateDepartmentInput!
+}
+
+input CreateOneEmployeeInput {
+  """The record to create"""
+  employee: CreateEmployeeInput!
+}
+
+input CreateOneRoleInput {
+  """The record to create"""
+  role: CreateRoleInput!
+}
+
+input CreateRoleInput {
+  name: String!
+  permissions: Float!
+}
+
+input DateFieldComparison {
+  between: DateFieldComparisonBetween
+  eq: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  is: Boolean
+  isNot: Boolean
+  lt: DateTime
+  lte: DateTime
+  neq: DateTime
+  notBetween: DateFieldComparisonBetween
+  notIn: [DateTime!]
+}
+
+input DateFieldComparisonBetween {
+  lower: DateTime!
+  upper: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DeleteManyDepartmentsInput {
+  """Filter to find records to delete"""
+  filter: DepartmentDeleteFilter!
+}
+
+input DeleteManyEmployeesInput {
+  """Filter to find records to delete"""
+  filter: EmployeeDeleteFilter!
+}
+
+type DeleteManyResponse {
+  """The number of records deleted."""
+  deletedCount: Int!
+}
+
+input DeleteManyRolesInput {
+  """Filter to find records to delete"""
+  filter: RoleDeleteFilter!
+}
+
+input DeleteOneDepartmentInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteOneEmployeeInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteOneRoleInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+type Department {
+  created_at: DateTime!
+  deleted_at: DateTime!
+  id: Float!
+  name: String!
+  permissions: Float!
+  updated_at: DateTime!
+}
+
+type DepartmentAggregateGroupBy {
+  created_at: DateTime
+  deleted_at: DateTime
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+type DepartmentAvgAggregate {
+  permissions: Float
+}
+
+type DepartmentConnection {
+  """Array of nodes."""
+  nodes: [Department!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type DepartmentCountAggregate {
+  created_at: Int
+  deleted_at: Int
+  name: Int
+  permissions: Int
+  updated_at: Int
+}
+
+input DepartmentDeleteFilter {
+  and: [DepartmentDeleteFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  name: StringFieldComparison
+  or: [DepartmentDeleteFilter!]
+  permissions: NumberFieldComparison
+  updated_at: DateFieldComparison
+}
+
+type DepartmentDeleteResponse {
+  created_at: DateTime
+  deleted_at: DateTime
+  id: Float
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+input DepartmentFilter {
+  and: [DepartmentFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  name: StringFieldComparison
+  or: [DepartmentFilter!]
+  permissions: NumberFieldComparison
+  updated_at: DateFieldComparison
+}
+
+type DepartmentMaxAggregate {
+  created_at: DateTime
+  deleted_at: DateTime
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+type DepartmentMinAggregate {
+  created_at: DateTime
+  deleted_at: DateTime
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+input DepartmentSort {
+  direction: SortDirection!
+  field: DepartmentSortFields!
+  nulls: SortNulls
+}
+
+enum DepartmentSortFields {
+  created_at
+  deleted_at
+  name
+  permissions
+  updated_at
+}
+
+type DepartmentSumAggregate {
+  permissions: Float
+}
+
+input DepartmentUpdateFilter {
+  and: [DepartmentUpdateFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  name: StringFieldComparison
+  or: [DepartmentUpdateFilter!]
+  permissions: NumberFieldComparison
+  updated_at: DateFieldComparison
+}
+
+type Employee {
+  age: Float!
+  created_at: DateTime!
+  deleted_at: DateTime!
+  email: String!
+  id: Float!
+  name: String!
+  updated_at: DateTime!
+}
+
+type EmployeeAggregateGroupBy {
+  created_at: DateTime
+  deleted_at: DateTime
+  email: String
+  name: String
+  updated_at: DateTime
+}
+
+type EmployeeConnection {
+  """Array of nodes."""
+  nodes: [Employee!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type EmployeeCountAggregate {
+  created_at: Int
+  deleted_at: Int
+  email: Int
+  name: Int
+  updated_at: Int
+}
+
+input EmployeeDeleteFilter {
+  and: [EmployeeDeleteFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [EmployeeDeleteFilter!]
+  updated_at: DateFieldComparison
+}
+
+type EmployeeDeleteResponse {
+  age: Float
+  created_at: DateTime
+  deleted_at: DateTime
+  email: String
+  id: Float
+  name: String
+  updated_at: DateTime
+}
+
+input EmployeeFilter {
+  and: [EmployeeFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [EmployeeFilter!]
+  updated_at: DateFieldComparison
+}
+
+type EmployeeMaxAggregate {
+  created_at: DateTime
+  deleted_at: DateTime
+  email: String
+  name: String
+  updated_at: DateTime
+}
+
+type EmployeeMinAggregate {
+  created_at: DateTime
+  deleted_at: DateTime
+  email: String
+  name: String
+  updated_at: DateTime
+}
+
+input EmployeeSort {
+  direction: SortDirection!
+  field: EmployeeSortFields!
+  nulls: SortNulls
+}
+
+enum EmployeeSortFields {
+  created_at
+  deleted_at
+  email
+  name
+  updated_at
+}
+
+input EmployeeUpdateFilter {
+  and: [EmployeeUpdateFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [EmployeeUpdateFilter!]
+  updated_at: DateFieldComparison
+}
+
+type Mutation {
+  createManyDepartments(input: CreateManyDepartmentsInput!): [Department!]!
+  createManyEmployees(input: CreateManyEmployeesInput!): [Employee!]!
+  createManyRoles(input: CreateManyRolesInput!): [Role!]!
+  createOneDepartment(input: CreateOneDepartmentInput!): Department!
+  createOneEmployee(input: CreateOneEmployeeInput!): Employee!
+  createOneRole(input: CreateOneRoleInput!): Role!
+  deleteManyDepartments(input: DeleteManyDepartmentsInput!): DeleteManyResponse!
+  deleteManyEmployees(input: DeleteManyEmployeesInput!): DeleteManyResponse!
+  deleteManyRoles(input: DeleteManyRolesInput!): DeleteManyResponse!
+  deleteOneDepartment(input: DeleteOneDepartmentInput!): DepartmentDeleteResponse!
+  deleteOneEmployee(input: DeleteOneEmployeeInput!): EmployeeDeleteResponse!
+  deleteOneRole(input: DeleteOneRoleInput!): RoleDeleteResponse!
+  updateManyDepartments(input: UpdateManyDepartmentsInput!): UpdateManyResponse!
+  updateManyEmployees(input: UpdateManyEmployeesInput!): UpdateManyResponse!
+  updateManyRoles(input: UpdateManyRolesInput!): UpdateManyResponse!
+  updateOneDepartment(input: UpdateOneDepartmentInput!): Department!
+  updateOneEmployee(input: UpdateOneEmployeeInput!): Employee!
+  updateOneRole(input: UpdateOneRoleInput!): Role!
+}
+
+input NumberFieldComparison {
+  between: NumberFieldComparisonBetween
+  eq: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  is: Boolean
+  isNot: Boolean
+  lt: Float
+  lte: Float
+  neq: Float
+  notBetween: NumberFieldComparisonBetween
+  notIn: [Float!]
+}
+
+input NumberFieldComparisonBetween {
+  lower: Float!
+  upper: Float!
+}
+
+type OffsetPageInfo {
+  """true if paging forward and there are more records."""
+  hasNextPage: Boolean
+
+  """true if paging backwards and there are more records."""
+  hasPreviousPage: Boolean
+}
+
+input OffsetPaging {
+  """Limit the number of records returned"""
+  limit: Int
+
+  """Offset to start returning records from"""
+  offset: Int
+}
+
+type Query {
+  department(
+    """The id of the record to find."""
+    id: ID!
+  ): Department
+  departments(
+    """Specify to filter the records returned."""
+    filter: DepartmentFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [DepartmentSort!] = []
+  ): DepartmentConnection!
+  employee(
+    """The id of the record to find."""
+    id: ID!
+  ): Employee
+  employees(
+    """Specify to filter the records returned."""
+    filter: EmployeeFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [EmployeeSort!] = []
+  ): EmployeeConnection!
+  role(
+    """The id of the record to find."""
+    id: ID!
+  ): Role
+  roles(
+    """Specify to filter the records returned."""
+    filter: RoleFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [RoleSort!] = []
+  ): RoleConnection!
+}
+
+type Role {
+  created_at: DateTime!
+  deleted_at: DateTime!
+  id: Float!
+  name: String!
+  permissions: Float!
+  updated_at: DateTime!
+}
+
+type RoleAggregateGroupBy {
+  created_at: DateTime
+  deleted_at: DateTime
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+type RoleAvgAggregate {
+  permissions: Float
+}
+
+type RoleConnection {
+  """Array of nodes."""
+  nodes: [Role!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type RoleCountAggregate {
+  created_at: Int
+  deleted_at: Int
+  name: Int
+  permissions: Int
+  updated_at: Int
+}
+
+input RoleDeleteFilter {
+  and: [RoleDeleteFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  name: StringFieldComparison
+  or: [RoleDeleteFilter!]
+  permissions: NumberFieldComparison
+  updated_at: DateFieldComparison
+}
+
+type RoleDeleteResponse {
+  created_at: DateTime
+  deleted_at: DateTime
+  id: Float
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+input RoleFilter {
+  and: [RoleFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  name: StringFieldComparison
+  or: [RoleFilter!]
+  permissions: NumberFieldComparison
+  updated_at: DateFieldComparison
+}
+
+type RoleMaxAggregate {
+  created_at: DateTime
+  deleted_at: DateTime
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+type RoleMinAggregate {
+  created_at: DateTime
+  deleted_at: DateTime
+  name: String
+  permissions: Float
+  updated_at: DateTime
+}
+
+input RoleSort {
+  direction: SortDirection!
+  field: RoleSortFields!
+  nulls: SortNulls
+}
+
+enum RoleSortFields {
+  created_at
+  deleted_at
+  name
+  permissions
+  updated_at
+}
+
+type RoleSumAggregate {
+  permissions: Float
+}
+
+input RoleUpdateFilter {
+  and: [RoleUpdateFilter!]
+  created_at: DateFieldComparison
+  deleted_at: DateFieldComparison
+  name: StringFieldComparison
+  or: [RoleUpdateFilter!]
+  permissions: NumberFieldComparison
+  updated_at: DateFieldComparison
+}
+
+"""Sort Directions"""
+enum SortDirection {
+  ASC
+  DESC
+}
+
+"""Sort Nulls Options"""
+enum SortNulls {
+  NULLS_FIRST
+  NULLS_LAST
+}
+
+input StringFieldComparison {
+  eq: String
+  gt: String
+  gte: String
+  iLike: String
+  in: [String!]
+  is: Boolean
+  isNot: Boolean
+  like: String
+  lt: String
+  lte: String
+  neq: String
+  notILike: String
+  notIn: [String!]
+  notLike: String
+}
+
+input UpdateDepartmentInput {
+  id: Float!
+  name: String
+  permissions: Float
+}
+
+input UpdateEmployeeInput {
+  age: Float
+  email: String
+  id: Int
+  name: String
+}
+
+input UpdateManyDepartmentsInput {
+  """Filter used to find fields to update"""
+  filter: DepartmentUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateDepartmentInput!
+}
+
+input UpdateManyEmployeesInput {
+  """Filter used to find fields to update"""
+  filter: EmployeeUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateEmployeeInput!
+}
+
+type UpdateManyResponse {
+  """The number of records updated."""
+  updatedCount: Int!
+}
+
+input UpdateManyRolesInput {
+  """Filter used to find fields to update"""
+  filter: RoleUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateRoleInput!
+}
+
+input UpdateOneDepartmentInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateDepartmentInput!
+}
+
+input UpdateOneEmployeeInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateEmployeeInput!
+}
+
+input UpdateOneRoleInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateRoleInput!
+}
+
+input UpdateRoleInput {
+  name: String!
+  permissions: Float!
+}
