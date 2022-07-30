@@ -1,4 +1,4 @@
-import { ArgsType, Field } from "@nestjs/graphql";
+import { ArgsType, Field, Int } from "@nestjs/graphql";
 
 @ArgsType()
 export class GetTaskArgs {
@@ -23,4 +23,13 @@ export class GetTaskArgs {
 
     @Field({ nullable: true })
     deleted_at: Date;
+
+    @Field(() => Int ,{ nullable: true })
+    page?: number;
+
+    @Field(() => Int ,{ nullable: true })
+    take?: number;
+
+    @Field({ nullable: true })
+    count?: boolean;
 }

@@ -5,21 +5,21 @@ import { IsInt, IsEmail } from 'class-validator';
 export class GetUserArgs {
     @Field({nullable: true})
     @IsInt()
-    id: number
+    id?: number
 
     @Field({nullable: true})
-    name: string;
+    name?: string;
 
     @Field({nullable: true})
     @IsEmail()
-    email: string;
+    email?: string;
 
     @Field({ nullable: true })
-    created_at: Date;
+    created_at?: Date;
     
     @Field({ nullable: true })
-    updated_at: Date;
+    updated_at?: Date;
     
     @Field({ nullable: true })
-    deleted_at: Date;
+    deleted_at?: Date;
 }

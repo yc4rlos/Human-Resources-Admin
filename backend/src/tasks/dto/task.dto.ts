@@ -18,6 +18,15 @@ export class TaskDTO {
   @Field({ nullable: true })
   description?: string;
 
-  @Field(() => EmployeeDTO, {nullable: true})
+  @Field()
+  created_at: Date;
+  
+  @Field()
+  updated_at: Date;
+
+  @Field({ nullable: true })
+  deleted_at: Date;
+
+  @Field(() => EmployeeDTO, { nullable: true })
   employee: EmployeeDTO;
 }

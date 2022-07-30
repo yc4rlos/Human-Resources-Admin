@@ -24,8 +24,8 @@ export class DetailsDTO {
   @Field(() => Int)
   id: number;
 
-  @Field()
-  skill: string;
+  @Field({nullable: true})
+  skill?: string;
 
   @Field(() => Int)
   knowledgeLevel: number;

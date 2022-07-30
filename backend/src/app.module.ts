@@ -9,6 +9,8 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { EmployeesModule } from './employees/employees.module';
 import { TasksModule } from './tasks/tasks.module';
+import { DepartmentsModule } from './departments/departments.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -30,7 +32,9 @@ import { TasksModule } from './tasks/tasks.module';
     }),
     UsersModule,
     EmployeesModule,
-    TasksModule
+    TasksModule,
+    DepartmentsModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
