@@ -24,7 +24,7 @@ export class UsersResolver {
   }
 
   @Query(() => UserListDTO, { name: 'users', nullable: true })
-  @UseGuards(GqlAuthGuard)
+  // @UseGuards(GqlAuthGuard)
   async findUsers(@Args() getUsersArgs?: GetUsersArgs): Promise<UserListDTO> {
     return await this.usersService.findAll(getUsersArgs);
   }
